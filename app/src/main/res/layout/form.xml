@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:layoutDirection="ltr"
+    android:id="@+id/laout_form_info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:maxLength="11"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:autofillHints="" />
+
+
+
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/share_for_number"
+        android:checked="true"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/eml2"
+            android:contentDescription="@string/todo" />
+
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/emaile"
+            android:layout_weight="1"
+            android:inputType="textEmailAddress"
+            android:autofillHints="" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

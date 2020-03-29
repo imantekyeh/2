@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="sub1">subItem1</string>
+    <string name="sub2">subitem2</string>
+    <string name="name">name</string>
+    <string name="submit">Submit</string>
+    <string name="phone">phone</string>
+    <string name="emaile">Emaile</string>
+    <string name="todo">TODO</string>
+    <string name="share_for_number">share phone number</string>
+</resources>
