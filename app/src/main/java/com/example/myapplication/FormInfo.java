@@ -44,15 +44,19 @@ public class FormInfo implements View.OnClickListener, CompoundButton.OnCheckedC
         if (v.getId() == btn_click.getId()) {
             String name = inputname.getText().toString().trim();
             String phone = inputphone.getText().toString().trim();
-            String maile = inputemaile.getText().toString().trim();
-            if (isValidInput(name, phone, maile)) {
-
-                Intent intent = new Intent(activity, SecendActivity.class);
+            String mail = inputemaile.getText().toString().trim();
+            if (isValidInput(name, phone, mail)) {
+                Intent intent = new Intent(activity,SecendActivity.class);
                 intent.putExtra("name",name);
-                intent.putExtra("phone",phone);
-                intent.putExtra("maile",maile);
+
+                if (cb_chek.isChecked()){
+                    intent.putExtra("phone",phone);
+
+                }
+
+                intent.putExtra("mail",mail);
                 activity.startActivity(intent);
-            }
+           }
         }
     }
 
