@@ -18,7 +18,6 @@ public class FormInfo implements View.OnClickListener, CompoundButton.OnCheckedC
     private Button btn_click;
     private CheckBox cb_chek;
 
-
     public FormInfo(Activity activity, int layoutId) {
         this.activity = activity;
         this.layout = activity.findViewById(layoutId);
@@ -39,6 +38,26 @@ public class FormInfo implements View.OnClickListener, CompoundButton.OnCheckedC
         cb_chek.setOnCheckedChangeListener(this);
     }
 
+    public EditText getInputname() {
+        return inputname;
+    }
+
+    public EditText getInputphone() {
+        return inputphone;
+    }
+
+    public EditText getInputemaile() {
+        return inputemaile;
+    }
+
+    public Button getBtn_click() {
+        return btn_click;
+    }
+
+    public CheckBox getCb_chek() {
+        return cb_chek;
+    }
+
     @Override
     public void onClick(View v) {
         if (v.getId() == btn_click.getId()) {
@@ -46,21 +65,27 @@ public class FormInfo implements View.OnClickListener, CompoundButton.OnCheckedC
             String phone = inputphone.getText().toString().trim();
             String mail = inputemaile.getText().toString().trim();
             if (isValidInput(name, phone, mail)) {
-                Intent intent = new Intent(activity,SecendActivity.class);
-                intent.putExtra("name",name);
-
-                if (cb_chek.isChecked()){
-                    intent.putExtra("phone",phone);
-
+                Intent intent = new Intent(activity, SecendActivity.class);
+                intent.putExtra("name", name);
+                if (cb_chek.isChecked()) {
+                    intent.putExtra("phone", phone);
                 }
-
-                intent.putExtra("mail",mail);
+                intent.putExtra("mail", mail);
                 activity.startActivity(intent);
-           }
+            }
         }
     }
 
-    private boolean isValidInput(String name, String phone, String maile) {
+    public boolean isValidInput(String name, String phone, String maile) {
+        if (name == null) {
+            name = inputname.getText().toString().trim();
+        }
+        if (phone==null){
+            phone=inputphone.getText().toString().trim();
+        }
+        if (maile==null){
+            maile=inputemaile.getText().toString().trim();
+        }
         if (name.length() < 3) {
             inputname.requestFocus();
             Toast.makeText(activity, "نام کمتر از سه حرف نباشد", Toast.LENGTH_LONG).show();

@@ -2,7 +2,10 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,4 +37,19 @@ public class SecendActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+       MenuItem item= menu.add("ok");
+       item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+       item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+           @Override
+           public boolean onMenuItemClick(MenuItem item) {
+               Intent intent=new Intent();
+               setResult(RESULT_OK,intent);
+               finish();
+               return false;
+           }
+       });
+        return super.onCreateOptionsMenu(menu);
+    }
 }
